@@ -17,6 +17,9 @@
                         <RouterLink to="/home" active-class="active" class="nav-link">Flora y Fauna</RouterLink>
                     </li>
                     <li class="nav-item">
+                        <RouterLink to="/favoritos" active-class="active" class="nav-link">Favoritos</RouterLink>
+                    </li>
+                    <li class="nav-item">
                         <RouterLink to="/contacto" active-class="active" class="nav-link">Contacto</RouterLink>
                     </li>
                 </ul>
