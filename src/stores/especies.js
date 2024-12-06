@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { obtenerEspecies } from '@/services/especiesService' // ruta de nuestra "api" consumida con axios
+import { obtenerEspecies } from '@/services/especiesService' // ruta de "api" consumida con axios
 
 export const useEspeciesStore = defineStore('especies', () => {
   const especies = ref([])
@@ -9,12 +9,17 @@ export const useEspeciesStore = defineStore('especies', () => {
     try {
       const data = await obtenerEspecies()
       especies.value = data
-      console.log('especies cargadas:', especies.value)
+      console.log('Especies cargadas:', especies.value)
     } catch (error) {
-      alert('No se ha encontrado la especie')
+      alert('No se ha podido cargar la lista de especies')
       console.error(error.message)
     }
   }
 
-  return { especies, fetchEspecies }
+  //obtener una especie por su id
+  const fetchEspeciePorId = (id) => {
+    return especies.value.find((especie) => especie.id === id)
+  }
+
+  return { especies, fetchEspecies, fetchEspeciePorId }
 })
