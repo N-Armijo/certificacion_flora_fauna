@@ -1,15 +1,11 @@
 import axios from 'axios'
 
-const api = axios.create({
-  baseURL: '../public/api',
-})
-
 export const obtenerEspecies = async () => {
   try {
-    const response = await api.get('/db.json')
-    return response.data
+    const response = await axios.get('/api/db.json')
+    return response.data.especies //Nos interesa acceder a la propiedad especie, ya que esta contine a todas las especies y poder consumirla a medidad de que se itera
   } catch (error) {
-    console.error('Error al cargar lugares:', error)
-    throw new Error('No se pudo cargar las especies')
+    console.error('Error al obtener especies:', error)
+    throw error
   }
 }

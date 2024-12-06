@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <RouterLink to="/" class="d-inline-block align-text-top navbar-brand">
                 <img src="@/assets/logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                Lugares Turisticos
+                Flora y Fauna
             </RouterLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <RouterLink to="/home" active-class="active" class="nav-link">Lugares Turisticos</RouterLink>
+                        <RouterLink to="/home" active-class="active" class="nav-link">Flora y Fauna</RouterLink>
                     </li>
                     <li class="nav-item">
                         <RouterLink to="/contacto" active-class="active" class="nav-link">Contacto</RouterLink>
