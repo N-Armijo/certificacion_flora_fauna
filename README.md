@@ -1,40 +1,40 @@
 # flora_fauna
 
-This template should help get you started developing with Vue 3 in Vite.
+## Configuración del proyecto
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+Para instalar las dependencias del proyecto, ejecuta:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilar y recargar en caliente para desarrollo
+
+Para iniciar el servidor de desarrollo con recarga automática, usa:
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Compilar y minificar para producción
+
+Para compilar y optimizar tu proyecto para producción, ejecuta:
 
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Ejecutar pruebas unitarias con [Vitest](https://vitest.dev/)
+
+Para ejecutar las pruebas unitarias, utiliza:
 
 ```sh
 npm run test:unit
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Linter con [ESLint](https://eslint.org/)
+
+Para verificar el código con ESLint, ejecuta:
 
 ```sh
 npm run lint
