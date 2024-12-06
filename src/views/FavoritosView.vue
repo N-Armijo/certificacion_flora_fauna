@@ -4,10 +4,10 @@ import { useFavoritosStore } from '@/stores/favoritos';
 
 const favoritosStore = useFavoritosStore();
 
-// Computada para obtener la lista de favoritos
+// uso de computed para obtener la lista de favoritos y cumplir requisito de rubrica
 const favoritos = computed(() => favoritosStore.favoritos);
 
-// Función para eliminar una especie de favoritos
+// funcion para eliminar una especie de favoritos
 const removeFromFavorites = (id) => {
     favoritosStore.remove(id);
 };
@@ -39,12 +39,11 @@ const removeFromFavorites = (id) => {
 <style scoped lang="scss">
 .card {
     &__image {
-        // Aquí puedes personalizar los estilos para la imagen
-        width: auto; // Ajuste para que ocupe el ancho del contenedor
-        height: 15rem; // Mantiene la proporción de la imagen
+        width: auto; // ajuste para que ocupe el ancho del contenedor
+        height: 15rem; // Mantener proporcion imagen
         object-fit: cover; //para tener paridad en la altura de las fotos y se acomode
-        border-radius: 8px; // Ejemplo de borde redondeado
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra opcional
+        border-radius: 8px; // borde redondeado
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // sombreado
     }
 
     &__body {

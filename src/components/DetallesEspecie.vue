@@ -46,7 +46,7 @@ const isFavorite = computed(() => {
             <p>{{ especie.estadoConservacion }}</p>
         </section>
 
-        <!-- Botón para agregar a favoritos -->
+        <!-- button para agregar a favoritos -->
         <button :disabled="isFavorite" @click="addToFavorites(especie)" class="btn btn-primary mb-2">
             {{ isFavorite ? 'Ya está en favoritos' : 'Agregar a Favoritos' }}
         </button>
