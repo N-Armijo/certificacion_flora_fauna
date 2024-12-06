@@ -3,13 +3,13 @@ import { onMounted, ref } from 'vue';
 import { useEspeciesStore } from '@/stores/especies';
 import CardEspecie from '@/components/CardEspecie.vue';
 
-// Acceso a la store
+// acceso a la store
 const especiesStore = useEspeciesStore();
 
-// Estado para manejar la carga de datos
+// estado para manejar la carga de datos
 const loading = ref(true);
 
-// Función para inicializar datos
+// inicializar datos
 onMounted(async () => {
     await especiesStore.fetchEspecies();
     loading.value = false;
@@ -20,7 +20,9 @@ onMounted(async () => {
 <template>
     <div class="container">
         <div v-if="loading" class="d-flex justify-content-center mt-5">
-            <span>Cargando...</span> <!-- Puedes usar un spinner de Bootstrap u otro componente de carga aquí -->
+            <div class="spinner-border text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         </div>
         <div v-else class="row">
             <div v-for="especie in especiesStore.especies" :key="especie.id"
