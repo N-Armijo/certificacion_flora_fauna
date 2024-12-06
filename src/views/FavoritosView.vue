@@ -14,67 +14,41 @@ const removeFromFavorites = (id) => {
 </script>
 
 <template>
-    <div class="favoritos-view container">
-        <h2 class="favoritos-view__title text-primary">Mis Favoritos</h2>
-        <div v-if="favoritos.length > 0">
-            <div v-for="especie in favoritos" :key="especie.id" class="favoritos-view__item">
-                <h3 class="favoritos-view__item-title">{{ especie.nombre }}</h3>
-                <img :src="especie.imagen" :alt="especie.nombre" class="favoritos-view__item-image img-fluid mb-2">
-                <p class="favoritos-view__item-text"><b>Tipo:</b> {{ especie.tipo }}</p>
-                <p class="favoritos-view__item-text"><b>Ubicación:</b> {{ especie.ubicacion }}</p>
-                <p class="favoritos-view__item-text"><b>Estado de conservación:</b> {{ especie.estadoConservacion }}</p>
-                <button @click="removeFromFavorites(especie.id)" class="favoritos-view__item-remove-btn btn btn-danger">
-                    Eliminar de Favoritos
-                </button>
+    <div class="container">
+        <div class="row">
+            <h2 class="text-primary">Mis Favoritos</h2>
+            <div v-for="especie in favoritos" :key="especie.id" class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                <div class="card">
+                    <h3 class="card-title">{{ especie.nombre }}</h3>
+                    <img :src="especie.imagen" :alt="especie.nombre" class="card__image img-fluid mb-2">
+                    <div class="card__body">
+                        <p class="favoritos-view__item-text"><b>Tipo:</b> {{ especie.tipo }}</p>
+                        <p class="favoritos-view__item-text"><b>Ubicación:</b> {{ especie.ubicacion }}</p>
+                        <p class="favoritos-view__item-text"><b>Estado de conservación:</b> {{
+                            especie.estadoConservacion }}
+                        </p>
+                    </div>
+                    <button @click="removeFromFavorites(especie.id)" class="btn btn-primary">
+                        Eliminar de Favoritos
+                    </button>
+                </div>
             </div>
         </div>
-        <p v-else class="favoritos-view__empty-message">No tienes especies en favoritos.</p>
     </div>
 </template>
-
 <style scoped lang="scss">
-.favoritos-view {
-    padding-bottom: 10vh;
-
-    &__title {
-        font-size: 2rem;
-        font-weight: bold;
+.card {
+    &__image {
+        // Aquí puedes personalizar los estilos para la imagen
+        width: auto; // Ajuste para que ocupe el ancho del contenedor
+        height: 15rem; // Mantiene la proporción de la imagen
+        object-fit: cover; //para tener paridad en la altura de las fotos y se acomode
+        border-radius: 8px; // Ejemplo de borde redondeado
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra opcional
     }
 
-    &__item {
-        margin-bottom: 2rem;
-        border: 1px solid #ddd;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-        position: relative;
-
-        &-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        &-image {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-
-        &-text {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        &-remove-btn {
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-        }
-    }
-
-    &__empty-message {
-        font-size: 1.2rem;
-        color: #888;
+    &__body {
+        height: 9rem;
     }
 }
 </style>
